@@ -4,12 +4,11 @@
 'use strict';
 
 angular.module('testApp')
-    .directive('krUpdate', function ($window, uiConstant) {
+    .directive('krUpdate', function () {
         return {
             require: 'ngModel',
             restrict: 'A',
             link: function (scope, element, attrs, ngModel) {
-
                 var blank_pattern = /^\s+|\s+$/g;
 
                 element.keyup(function () {
