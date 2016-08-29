@@ -1,2 +1,1 @@
-# test
-테스트
+# angular korean input bug fix
