@@ -11,7 +11,10 @@ angular.module('testApp')
             link: function (scope, element, attrs, ngModel) {
                 var blank_pattern = /^\s+|\s+$/g;
 
+	            console.log("로컬 변경했을때");
+
                 element.keyup(function () {
+
                     if (element.val().length > 0) {
                         if (element.val().replace(blank_pattern, '') == "") {
                             element.val("");
