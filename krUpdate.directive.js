@@ -15,6 +15,8 @@ angular.module('testApp')
 
 	            console.log("한줄 더 변경");
 
+	            console.log("hook!!!!!!!!!");
+
                 element.keyup(function () {
 
                     if (element.val().length > 0) {
