@@ -13,6 +13,8 @@ angular.module('testApp')
 
 	            console.log("로컬 변경했을때");
 
+	            console.log("한줄 더 변경");
+
                 element.keyup(function () {
 
                     if (element.val().length > 0) {
