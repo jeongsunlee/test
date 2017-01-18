@@ -11,9 +11,11 @@ angular.module('testApp')
             link: function (scope, element, attrs, ngModel) {
                 var blank_pattern = /^\s+|\s+$/g;
 
-	            element.keypress(function () {
+	            /*element.keypress(function () {
 		            console.log("추가했다!!");
-	            });
+	            });*/
+
+	            console.log("요약 정보를 넣으면 안되겟어");
 
                 element.keyup(function () {
 
