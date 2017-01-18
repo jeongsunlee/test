@@ -11,11 +11,9 @@ angular.module('testApp')
             link: function (scope, element, attrs, ngModel) {
                 var blank_pattern = /^\s+|\s+$/g;
 
-	            console.log("로컬 변경했을때");
-
-	            console.log("한줄 더 변경");
-
-	            console.log("hook!!!!!!!!!");
+	            element.keypress(function () {
+		            console.log("추가했다!!");
+	            });
 
                 element.keyup(function () {
 
