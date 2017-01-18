@@ -15,7 +15,9 @@ angular.module('testApp')
 		            console.log("추가했다!!");
 	            });*/
 
-	            console.log("요약 정보를 넣으면 안되겟어");
+	            console.log("요약 정보 안넣기!!");
+
+	            console.log("키 제대로 넣기!!");
 
                 element.keyup(function () {
 
