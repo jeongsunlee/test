@@ -11,14 +11,6 @@ angular.module('testApp')
             link: function (scope, element, attrs, ngModel) {
                 var blank_pattern = /^\s+|\s+$/g;
 
-	            /*element.keypress(function () {
-		            console.log("추가했다!!");
-	            });*/
-
-	            console.log("요약 정보 안넣기!!");
-
-	            console.log("키 제대로 넣기!!");
-
                 element.keyup(function () {
 
                     if (element.val().length > 0) {
@@ -31,6 +23,8 @@ angular.module('testApp')
                     ngModel.$setViewValue(element.val());
                     scope.$apply();
                 });
+
+	            console.log("어떤게 변한지 알수있을까??");
 
                 element.blur(function () {
                     if (element.val().length > 0) {
