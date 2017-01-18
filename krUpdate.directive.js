@@ -11,6 +11,8 @@ angular.module('testApp')
             link: function (scope, element, attrs, ngModel) {
                 var blank_pattern = /^\s+|\s+$/g;
 
+	            console.log("추가 등록 테스트");
+
                 element.keyup(function () {
 
                     if (element.val().length > 0) {

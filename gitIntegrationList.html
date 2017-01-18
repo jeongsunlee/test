@@ -1,0 +1,75 @@
+<div>
+    <button type="button" class="btn btn-sm btn-success" ng-click="authGit()">git 사용자 인증</button>
+
+    <button type="button" class="btn btn-sm btn-success" ng-click="addGit()">git repository 생성</button>
+
+    <button type="button" class="btn btn-sm btn-success" ng-click="pullGit()">git pull 실행</button>
+
+    <button type="button" class="btn btn-sm btn-success" ng-click="checkOutGit()">git local branch 생성</button>
+
+    <button type="button" class="btn btn-sm btn-success" ng-click="findGit()">git 목록 조회</button>
+
+    <button type="button" class="btn btn-sm btn-success" ng-click="findTreeGit()">git 구조 조회</button>
+
+    <button type="button" class="btn btn-sm btn-success" ng-click="findFileDiff()">git 파일 변경 비교</button>
+
+    <button type="button" class="btn btn-sm btn-success" ng-click="webHook()">web hook 테스트</button>
+
+    <div id="gitshow"></div>
+
+</div>-
+
+<div>
+    <!-- 공통 헤더 -->
+    <div class="row">
+        <span class="con_title" translate="">Git 관리&nbsp;</span>
+        <div class="btn-group con_title_margin" dropdown>
+            <button name="topAction"
+                    ng-click="addGitIntegration()" owl-btn-create>
+            </button>
+        </div>
+    </div>
+
+    <!-- 상단 검색 부분 -->
+    <div class="row con_search">
+        <form name="milestoneSearchForm" action="{{filter(actionList.excel)}}" method="post" ng-enter="getList(0)" novalidate>
+            <input ng-show="false" type="text" name="projectId" ng-model="searchData.projectId">
+
+            <div class="col-sm-12">
+                <div class="form-group col-md-4 col-sm-3">
+                    <label class="control-label" for="project1" translate="gitIntegration.displayName"></label>
+                    <input class="form-control input-sm" type="text" id="project1" name="displayName"
+                           ng-model="searchData.displayName" owl-kr-update maxlength="100" owl-auto-focus>
+                </div>
+
+                <div class="form-group col-md-2 col-sm-2">
+                    <label class="control-label" translate="common.status">상태</label>
+                    <ng-dropdown-multiselect class="multiSelect cursor"
+                                             data-input-name="statuses"
+                                             selected-model="searchData.statuses"
+                                             extra-settings="{ stringTypeOption : true }"
+                                             options="vm.statusOptions"></ng-dropdown-multiselect>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-7">
+                    <label class="control-label hidden-xs">&nbsp;</label>
+                    <div>
+                        <button type="button" ng-click="getList(0)" check-box-clear owl-btn-find>
+                        </button>
+                        <button type="button" ng-click="initSearchData()" owl-btn-init>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 테이블 -->
+    <div class="con_table">
+        <ng-include src="dataService.getAbsUrl('/app/common/tableHeader.html')"></ng-include>
+        <ng-include src="dataService.getAbsUrl('/app/common/smartBody.html')"></ng-include>
+        <div class="table_B text-center">
+            <pagination boundary-links="true" items-per-page="selectedPageRowCount" total-items="responseData.page.totalCount" ng-model="selectedPage" max-size="10" ng-click="getList(selectedPage-1)" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+        </div>
+    </div>
+</div>
