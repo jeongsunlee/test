@@ -41,6 +41,11 @@
         dataService.setProjectId(projectInfo.id);
         dataService.setProjectName(projectInfo.name);
 
+
+	    $scope.test = function () {
+		    $log.debug("웹 훅 테스트");
+	    }
+
         $scope.dataService = dataService;
         $scope.cookieService = cookieService;
         $scope.tableService = tableService;
