@@ -1,77 +1,12 @@
-<div>
-	<!-- 공통 헤더 -->
-	<div class="row">
-		<div class="con_title">
-			<span translate="project.list">프로젝트 목록</span>
-			<div class="btn-group con_title_margin" dropdown>
-				<button ng-show="permissionService.permissionCheck('/project/add')"
-                        ui-sref="project.addTypeSelect"
-                        owl-btn-create>
-				</button>
-			</div>
-		</div>gdgd
-	</div>
+<html>
+
+<header>
+
+</header>
 
 
+<body>
+<span>안녕!</span>
+</body>
 
-	<div class="row">
-
-	</div>
-
-    <!-- 상단 검색 부분 -->
-    <div class="row con_search">
-        <form name="projectSearchForm" action="{{filter(actionList.excel)}}" method="post"
-              ng-enter="getList(0)" novalidate>
-            <input ng-show="false" type="text" name="projectIds">
-            <input ng-show="false" type="text" name="statuses">
-            <input ng-show="false" type="text" name="leaderIds">
-
-            <div class="col-sm-12">
-                <div class="form-group col-md-4 col-sm-3">
-                    <label class="control-label" for="project1" translate="common.projectName">프로젝트</label>
-                    <input class="form-control input-sm" type="text" id="project1" name="name"
-                           ng-model="searchData.name" owl-kr-update maxlength="50" owl-auto-focus>
-                </div>
-                <div class="form-group col-md-2 col-sm-2">
-                    <label class="control-label" for="project4" translate="common.status">상태</label>
-                    <ng-dropdown-multiselect class="multiSelect cursor"
-                                             data-input-name="statuses"
-                                             selected-model="searchData.statuses"
-                                             extra-settings="{ stringTypeOption : true }"
-                                             options="vm.statusOptions"></ng-dropdown-multiselect>
-                </div>
-                <!-- 담당자 -->
-                <div class="form-group col-md-2 col-sm-2">
-                    <label class="control-label" for="project3" translate="common.projectManager">관리자</label>
-
-                    <js-autocomplete-single data-input-name="vm.leaders"
-                                            selected-model="vm.leaders"
-                                            search="searchData.assigneeName"
-                                            source="userLoad(searchData.assigneeName, vm.leaders)"
-                                            page="autocompletePageing.user.page"
-                                            total-page="autocompletePageing.user.totalPage"
-                                            extra-settings="{ displayProp : 'name' , idProp : 'id', imageable : true, imagePathProp : 'profile', type : 'user', maxlength : 20 }"></js-autocomplete-single>
-                </div>
-
-                <div class="form-group col-md-2 col-sm-3">
-                    <label class="control-label hidden-xs">&nbsp;</label>
-                    <div>
-                        <button type="button" ng-click="getList(0)" check-box-clear owl-btn-find></button>
-                        <button type="button" ng-click="initSearchData()" owl-btn-init></button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-
-	<div class="row con_table">
-		<ng-include src="dataService.getAbsUrl('/app/common/tableHeader.html')"></ng-include>
-		<ng-include src="dataService.getAbsUrl('/app/common/smartBody.html')"></ng-include>
-		<div class="table_B text-center">
-			<pagination boundary-links="true" items-per-page="selectedPageRowCount"
-			            total-items="responseData.page.totalCount" ng-model="selectedPage" max-size="10"
-			            ng-click="getList(selectedPage-1)" class="pagination-sm" previous-text="&lsaquo;"
-			            next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
-		</div>
-	</div>
-</div>
+</html>
